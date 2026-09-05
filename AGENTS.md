@@ -16,7 +16,7 @@ skills/
     assets/*              # optional: files a skill's output is built from (e.g. a template), not read as background material
 ```
 
-Currently: `skills/ingredient-analysis` and `skills/product-comparison`.
+Currently: `skills/ingredient-analysis`, `skills/product-comparison`, and `skills/contract-terms-analysis`.
 
 ## SKILL.md structure
 
