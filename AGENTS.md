@@ -13,6 +13,7 @@ skills/
   <skill-name>/
     SKILL.md              # required: frontmatter + instructions
     references/*.md       # optional: on-demand lookup material
+    assets/*              # optional: files a skill's output is built from (e.g. a template), not read as background material
 ```
 
 Currently: `skills/ingredient-analysis` and `skills/product-comparison`.
@@ -36,7 +37,7 @@ The body follows a consistent shape across skills:
 
 1. **One-line restatement** of the skill's job, then a short paragraph naming the specific failure mode the skill exists to avoid (e.g. ingredient-analysis's "alarmist vs. dismissive" framing; product-comparison's "two teardowns stapled together" framing). This framing paragraph is load-bearing — it's what keeps the skill's output calibrated rather than generic, so preserve it when editing.
 2. **`## Workflow`** — numbered steps in the order the analysis should actually happen (establish scope/decision → gather substance → assess → structure findings). Steps reference `references/*.md` inline at the point they're needed rather than front-loading all reference material.
-3. **`## Output`** — a literal template (in a fenced code block) the response should follow, plus a short list of the possible verdicts/calls with one line each on when to use them. Every template leads with a verdict/pick line first, details after — these skills are built around "commit to a call up front, justify it below," not narrative build-up.
+3. **`## Output`** — a literal template the response should follow, plus a short list of the possible verdicts/calls with one line each on when to use them. Every template leads with a verdict/pick line first, details after — these skills are built around "commit to a call up front, justify it below," not narrative build-up. The template is inline in a fenced code block (ingredient-analysis) or split into `assets/output-template.md` and referenced by path (product-comparison) — either is fine; split it out once the template is long enough that it's competing with the prose for attention, or once something outside `SKILL.md` (a saved file, a script) needs to reuse the exact same template.
 4. **`## Calibration`** — explicit failure modes to avoid, usually paired opposites (e.g. "don't manufacture concern" / "don't dismiss either"). This section is where the skill's judgment calls are pinned down; don't remove it during trims.
 
 ## References
@@ -71,5 +72,5 @@ This repo is not yet a Claude Code plugin (no `.claude-plugin/` directory). Conv
 
 - Changes here are almost entirely edits to `SKILL.md` / `references/*.md` prose. There's no code path to run — validate a change by rereading it against the frontmatter's trigger list and the workflow/output/calibration structure above, not by executing anything.
 - Keep frontmatter `description` fields comprehensive: they're the only thing used for skill routing, so a trigger phrasing left out is a real gap, not a style nit.
-- New skills should follow the four-section body shape (framing → Workflow → Output → Calibration) already established by both existing skills, including a literal output template in a fenced code block.
+- New skills should follow the four-section body shape (framing → Workflow → Output → Calibration) already established by both existing skills, including a literal output template (inline or in `assets/output-template.md` — see the Output bullet above).
 - Keep skill directory names and their `name` frontmatter in sync (see Distribution sections above) — this is enforced by the Agent Skills spec and by how Claude Code namespaces skills inside a plugin, not just a style preference.

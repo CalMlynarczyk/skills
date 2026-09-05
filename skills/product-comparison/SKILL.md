@@ -90,28 +90,7 @@ If it's a tie, say it's a tie and tell them to buy the cheaper or more available
 
 ## Output
 
-Inline in the chat by default, structured like this. For comparisons big enough to be reference material — five or more products, or something they'll take shopping — offer a saved file at the end rather than assuming.
-
-```
-**[The decision]** — [what's being chosen, for what job]
-
-**Pick: [product]** — [one sentence of why]
-**Assuming:** [criteria being applied and where they came from]
-- **Deal-breakers:** [product] — [what disqualifies it]  (omit if none)
-- **Flips if:** [the one condition that changes the answer]
-
-## What separates them
-[Aligned-row table. Every product gets the same rows in the same units.]
-
-## Where it's decided
-[The two or three attributes driving the call, with the evidence behind each.]
-
-## Where they're the same
-[The ties, briefly.]
-
-## Catches
-[Per-product drawbacks that don't disqualify but should be known before buying.]
-```
+Inline in the chat by default, structured per `assets/output-template.md`. For comparisons big enough to be reference material — five or more products, or something they'll take shopping — offer a saved file at the end rather than assuming.
 
 Adapt the depth to the decision. Two nearly identical pantry staples get a verdict, a four-row table, and a line — running the full template on them wastes the reader's time and implies the choice matters more than it does. Drop empty sections.
 
